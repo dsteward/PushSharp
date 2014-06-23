@@ -106,7 +106,7 @@ namespace PushSharp.Apple
 
 			// APNS will not store-and-forward a notification with no expiry, so set it one year in the future
 			// if the client does not provide it.
-			int expiryTimeStamp = -1;
+			int expiryTimeStamp = 0;
 			if (Expiration != DoNotStore)
 			{
 				DateTime concreteExpireDateUtc = (Expiration ?? DateTime.UtcNow.AddMonths(1)).ToUniversalTime();
